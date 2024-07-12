@@ -136,12 +136,12 @@ class _BankPageState extends State<BankPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Add Bank Detail'),
+          title: const Text('Add Bank Detail'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               DropdownButtonFormField<String>(
-                decoration: InputDecoration(labelText: 'Bank Name'),
+                decoration: const InputDecoration(labelText: 'Bank Name'),
                 items: bankNames.map((String bank) {
                   return DropdownMenuItem<String>(
                     value: bank,
@@ -155,7 +155,7 @@ class _BankPageState extends State<BankPage> {
                 },
               ),
               TextField(
-                decoration: InputDecoration(labelText: 'Account Title'),
+                decoration: const InputDecoration(labelText: 'Account Title'),
                 onChanged: (value) {
                   setState(() {
                     sAccountTitle = value;
@@ -163,7 +163,7 @@ class _BankPageState extends State<BankPage> {
                 },
               ),
               TextField(
-                decoration: InputDecoration(labelText: 'Account Number'),
+                decoration: const InputDecoration(labelText: 'Account Number'),
                 onChanged: (value) {
                   setState(() {
                     sAccountNumber = value;
@@ -177,14 +177,14 @@ class _BankPageState extends State<BankPage> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             ElevatedButton(
               onPressed: () {
                 addBankDetail();
                 Navigator.of(context).pop();
               },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         );
@@ -203,13 +203,13 @@ class _BankPageState extends State<BankPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Edit Bank Detail'),
+          title: const Text('Edit Bank Detail'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               DropdownButtonFormField<String>(
                 value: sBankName,
-                decoration: InputDecoration(labelText: 'Bank Name'),
+                decoration: const InputDecoration(labelText: 'Bank Name'),
                 items: bankNames.map((String bank) {
                   return DropdownMenuItem<String>(
                     value: bank,
@@ -224,7 +224,7 @@ class _BankPageState extends State<BankPage> {
               ),
               TextField(
                 controller: TextEditingController(text: sAccountTitle),
-                decoration: InputDecoration(labelText: 'Account Title'),
+                decoration: const InputDecoration(labelText: 'Account Title'),
                 onChanged: (value) {
                   setState(() {
                     sAccountTitle = value;
@@ -233,7 +233,7 @@ class _BankPageState extends State<BankPage> {
               ),
               TextField(
                 controller: TextEditingController(text: sAccountNumber),
-                decoration: InputDecoration(labelText: 'Account Number'),
+                decoration: const InputDecoration(labelText: 'Account Number'),
                 onChanged: (value) {
                   setState(() {
                     sAccountNumber = value;
@@ -247,14 +247,14 @@ class _BankPageState extends State<BankPage> {
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             ElevatedButton(
               onPressed: () {
                 updateBankDetail(data['id']);
                 Navigator.of(context).pop();
               },
-              child: Text('Submit'),
+              child: const Text('Submit'),
             ),
           ],
         );
@@ -267,21 +267,22 @@ class _BankPageState extends State<BankPage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text('Delete Bank Detail?'),
-          content: Text('Are you sure you want to delete this bank detail?'),
+          title: const Text('Delete Bank Detail?'),
+          content:
+              const Text('Are you sure you want to delete this bank detail?'),
           actions: [
             TextButton(
               onPressed: () {
                 Navigator.of(context).pop();
               },
-              child: Text('Cancel'),
+              child: const Text('Cancel'),
             ),
             TextButton(
               onPressed: () {
                 deleteBankDetail(docId);
                 Navigator.of(context).pop();
               },
-              child: Text(
+              child: const Text(
                 'Delete',
                 style: TextStyle(color: Colors.red),
               ),
@@ -342,8 +343,8 @@ class _BankPageState extends State<BankPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: showAddBankDetailPopup,
-        child: Icon(Icons.add),
         backgroundColor: Colors.green,
+        child: const Icon(Icons.add),
       ),
     );
   }
@@ -394,11 +395,11 @@ class showbankDetails extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   IconButton(
-                    icon: Icon(Icons.edit),
+                    icon: const Icon(Icons.edit),
                     onPressed: () => onEdit(data),
                   ),
                   IconButton(
-                    icon: Icon(Icons.delete),
+                    icon: const Icon(Icons.delete),
                     onPressed: () => onDelete(docId),
                   ),
                 ],
