@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "446199727825",
+    "project_id": "roshan-dastak-client",
+    "storage_bucket": "roshan-dastak-client.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:446199727825:android:e3d19231fea435b8c0e7f0",
+        "android_client_info": {
+          "package_name": "com.example.roshan_dastak_client"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaEA5QLr0bEosGVPUyH27FxfaFlfMyw-Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+    
+  ],
+  "configuration_version": "1"
+}
