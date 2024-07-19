@@ -693,6 +693,9 @@ class _SignupNextPageState extends State<SignupNextPage> {
                             'Account Tittle': accountT,
                             'Account Number': accountN,
                           });
+                          setState(() {
+                            tickcolor1 = Colors.green;
+                          });
 
                           Navigator.pop(context, true);
                         },
@@ -708,9 +711,7 @@ class _SignupNextPageState extends State<SignupNextPage> {
       },
     ).then((shouldUpdate) {
       if (shouldUpdate == true) {
-        setState(() {
-          tickcolor1 = Colors.green;
-        });
+        setState(() {});
       }
     });
   }
@@ -900,8 +901,12 @@ class _SignupNextPageState extends State<SignupNextPage> {
                           backgroundColor: Colors.green,
                         ),
                         onPressed: () {
-                          setState(() {});
-                          Navigator.pop(context, true);
+                          if (profileImageURL != '') {
+                            setState(() {
+                              tickcolor2 = Colors.green;
+                            });
+                            Navigator.pop(context, true);
+                          }
                         },
                         child: const Text(
                           'Upload',
@@ -918,9 +923,7 @@ class _SignupNextPageState extends State<SignupNextPage> {
       },
     ).then((shouldUpdate) {
       if (shouldUpdate == true) {
-        setState(() {
-          tickcolor2 = Colors.green;
-        });
+        setState(() {});
       }
     });
   }
@@ -1288,7 +1291,29 @@ class _SignupNextPageState extends State<SignupNextPage> {
                           Navigator.pop(context, true);
                         },
                         child: const Text(
-                          'Next',
+                          'Close',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                        ),
+                        onPressed: () {
+                          if (CNICfrontURL != '' && CNICbackURL != '') {
+                            setState(() {
+                              tickcolor3 = Colors.green;
+                            });
+                            Navigator.pop(context, true);
+                          }
+                        },
+                        child: const Text(
+                          'Uploaded',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -1302,9 +1327,7 @@ class _SignupNextPageState extends State<SignupNextPage> {
       },
     ).then((shouldUpdate) {
       if (shouldUpdate == true) {
-        setState(() {
-          tickcolor3 = Colors.green;
-        });
+        setState(() {});
       }
     });
   }
@@ -1480,6 +1503,9 @@ class _SignupNextPageState extends State<SignupNextPage> {
                             'Nominee CNIC': cnic,
                             'Nominee Address': adress,
                           });
+                          setState(() {
+                            tickcolor4 = Colors.green;
+                          });
 
                           Navigator.pop(context, true);
                         },
@@ -1495,9 +1521,7 @@ class _SignupNextPageState extends State<SignupNextPage> {
       },
     ).then((shouldUpdate) {
       if (shouldUpdate == true) {
-        setState(() {
-          tickcolor4 = Colors.green;
-        });
+        setState(() {});
       }
     });
   }
@@ -1612,6 +1636,9 @@ class _SignupNextPageState extends State<SignupNextPage> {
                             'Account Title': accountT,
                             'Account Number': accountN,
                           });
+                          setState(() {
+                            tickcolor5 = Colors.green;
+                          });
 
                           Navigator.pop(context, true);
                         },
@@ -1627,9 +1654,7 @@ class _SignupNextPageState extends State<SignupNextPage> {
       },
     ).then((shouldUpdate) {
       if (shouldUpdate == true) {
-        setState(() {
-          tickcolor5 = Colors.green;
-        });
+        setState(() {});
       }
     });
   }
@@ -2014,7 +2039,29 @@ class _SignupNextPageState extends State<SignupNextPage> {
                           Navigator.pop(context, true);
                         },
                         child: const Text(
-                          'Next',
+                          'Close',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Expanded(
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.green,
+                        ),
+                        onPressed: () {
+                          if (nomineeCNICfrontURL != '' &&
+                              nomineeCNICbackURL != '') {
+                            setState(() {});
+                            Navigator.pop(context, true);
+                            tickcolor6 = Colors.green;
+                          }
+                        },
+                        child: const Text(
+                          'Uploaded',
                           style: TextStyle(color: Colors.white),
                         ),
                       ),
@@ -2028,9 +2075,7 @@ class _SignupNextPageState extends State<SignupNextPage> {
       },
     ).then((shouldUpdate) {
       if (shouldUpdate == true) {
-        setState(() {
-          tickcolor6 = Colors.green;
-        });
+        setState(() {});
       }
     });
   }
