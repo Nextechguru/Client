@@ -141,6 +141,7 @@ class _BankPageState extends State<BankPage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               DropdownButtonFormField<String>(
+                isExpanded: true,
                 decoration: const InputDecoration(labelText: 'Bank Name'),
                 items: bankNames.map((String bank) {
                   return DropdownMenuItem<String>(
@@ -208,12 +209,16 @@ class _BankPageState extends State<BankPage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               DropdownButtonFormField<String>(
+                isExpanded: true,
                 value: sBankName,
                 decoration: const InputDecoration(labelText: 'Bank Name'),
                 items: bankNames.map((String bank) {
                   return DropdownMenuItem<String>(
                     value: bank,
-                    child: Text(bank),
+                    child: Text(
+                      bank,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   );
                 }).toList(),
                 onChanged: (value) {

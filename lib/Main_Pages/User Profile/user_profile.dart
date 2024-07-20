@@ -31,7 +31,7 @@ class _Profile extends State<Profile> {
   var nomineeCNIC;
   var nomineeAddress;
   var profileURL;
-  
+
   @override
   void initState() {
     super.initState();
@@ -97,9 +97,12 @@ class _Profile extends State<Profile> {
               SizedBox(
                   width:
                       10.0), // Add some spacing between icon and title (optional)
-              Text(
-                'Profit Details',
-                style: TextStyle(color: Colors.white),
+              Flexible(
+                child: Text(
+                  'Profit Details',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ],
           ),
@@ -139,11 +142,18 @@ class _Profile extends State<Profile> {
                           blurRadius: 10)
                     ]),
                 child: ListTile(
-                  title: Text(name ?? ''),
+                  title: Text(name ?? '', overflow: TextOverflow.ellipsis),
                   subtitle: Row(
                     children: [
-                      const Text('S/D/W/O:'),
-                      Text(father ?? ''),
+                      const Flexible(
+                          child: Text('S/D/W/O:',
+                              overflow: TextOverflow.ellipsis)),
+                      Flexible(
+                        child: Text(
+                          father ?? '',
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
                     ],
                   ),
                   leading: const Icon(CupertinoIcons.person),
